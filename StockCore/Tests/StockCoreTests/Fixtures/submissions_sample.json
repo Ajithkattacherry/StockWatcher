@@ -1,0 +1,18 @@
+{
+  "cik": "0000123456",
+  "entityType": "operating",
+  "sic": "3674",
+  "sicDescription": "Semiconductors & Related Devices",
+  "name": "Sample Corp",
+  "tickers": ["SMPL"],
+  "filings": {
+    "recent": {
+      "accessionNumber": ["0000123456-26-000050", "0000123456-26-000040", "0000123456-26-000030", "0000123456-25-000010"],
+      "filingDate": ["2026-08-15", "2026-08-01", "2026-06-02", "2025-11-20"],
+      "reportDate": ["2026-08-12", "2026-06-30", "2026-05-29", "2025-11-18"],
+      "form": ["4", "10-Q", "4", "4"],
+      "primaryDocument": ["xslF345X05/form4-aug.xml", "smpl-20260630.htm", "xslF345X05/form4-jun.xml", "xslF345X05/form4-old.xml"]
+    },
+    "files": []
+  }
+}
