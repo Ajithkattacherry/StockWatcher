@@ -50,6 +50,10 @@ import Testing
                                    metrics: metrics(80, except: [.insiderNetBuying: 95], buyers: 2),
                                    table: .identity)
         #expect(noBonus.metricPercentiles[.insiderNetBuying] == 95)
+        let uncapped = engine.score(company: testCompany,
+                                    metrics: metrics(80, except: [.insiderNetBuying: 80], buyers: 3),
+                                    table: .identity)
+        #expect(uncapped.metricPercentiles[.insiderNetBuying] == 90)
     }
 
     @Test func financialCompaniesAreLimitedAndIneligible() {

@@ -18,8 +18,8 @@
         {"start": "2023-01-01", "end": "2023-12-31", "val": 150, "accn": "d", "fy": 2023, "fp": "FY", "form": "10-K", "filed": "2024-02-10"},
         {"start": "2023-01-01", "end": "2023-12-31", "val": 151, "accn": "e", "fy": 2023, "fp": "FY", "form": "10-K/A", "filed": "2024-06-01"},
         {"start": "2024-01-01", "end": "2024-03-31", "val": 40, "accn": "f", "fy": 2024, "fp": "Q1", "form": "10-Q", "filed": "2024-05-01"},
-        {"start": "2024-01-01", "end": "2024-12-31", "val": 190, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10", "frame": "CY2024"},
-        {"start": "2024-10-01", "end": "2024-12-31", "val": 55, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10", "frame": "CY2024Q4"}
+        {"start": "2024-10-01", "end": "2024-12-31", "val": 55, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10", "frame": "CY2024Q4"},
+        {"start": "2024-01-01", "end": "2024-12-31", "val": 190, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10", "frame": "CY2024"}
       ]}},
       "EarningsPerShareDiluted": {"label": "EPS diluted", "units": {"USD/shares": [
         {"start": "2021-01-01", "end": "2021-12-31", "val": 1.00, "accn": "c", "fy": 2022, "fp": "FY", "form": "10-K", "filed": "2023-02-10"},
@@ -43,7 +43,8 @@
       "LongTermDebt": {"label": "Debt", "units": {"USD": [
         {"end": "2023-12-31", "val": 50, "accn": "d", "fy": 2023, "fp": "FY", "form": "10-K", "filed": "2024-02-10"},
         {"end": "2024-06-30", "val": 48, "accn": "h", "fy": 2024, "fp": "Q2", "form": "10-Q", "filed": "2024-08-01"},
-        {"end": "2024-12-31", "val": 45, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10"}
+        {"end": "2024-12-31", "val": 45, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10"},
+        {"end": "2024-12-31", "val": 999, "accn": "z", "fy": 2025, "fp": "Q1", "form": "10-Q", "filed": "2025-05-01"}
       ]}},
       "CashAndCashEquivalentsAtCarryingValue": {"label": "Cash", "units": {"USD": [
         {"end": "2024-12-31", "val": 20, "accn": "g", "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-10"}

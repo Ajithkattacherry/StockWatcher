@@ -59,6 +59,12 @@ import Testing
         let m = MetricCalculator.metrics(for: inputs(financials: years))
         #expect(m[.netDebtToFCF] == nil)
         #expect(m[.freeCashFlowMargin] == 0)
+
+        var negative = fourYears
+        negative[3].capitalExpenditure = 40  // FCF = -10
+        let n = MetricCalculator.metrics(for: inputs(financials: negative))
+        #expect(n[.netDebtToFCF] == nil)
+        #expect(approx(n[.freeCashFlowMargin], -10 / 133.1))
     }
 
     @Test func allMetricValuesAreFinite() {
@@ -68,11 +74,16 @@ import Testing
             year("2023-12-31", revenue: 0, eps: 0, opIncome: 0),
             year("2024-12-31", revenue: 0, eps: -2, opIncome: -1, netIncome: -4, ocf: -1, capex: 2, debt: 10),
         ]
+        // An absurdly large trade (overflow, not a per-field guard) exercises the
+        // final isFinite filter rather than one of the upstream nil-guards.
+        let overflow = insider("Big", "P", "2026-08-01", shares: .greatestFiniteMagnitude, price: 2)
         let m = MetricCalculator.metrics(for: inputs(
             financials: weird, quote: PriceQuote(price: 5, peTTM: -3, asOf: "2026-09-30"),
+            insiders: [overflow],
             holdings: [InstitutionalQuarter(period: "2026-03-31", totalShares: 0, holderCount: 0),
                        InstitutionalQuarter(period: "2026-06-30", totalShares: 10, holderCount: 2)]))
         #expect(m.values.values.allSatisfy { $0.isFinite })
+        #expect(m[.insiderNetBuying] == nil)
     }
 
     @Test func insiderNetBuyingCountsOnlyRecentOpenMarketTrades() {
