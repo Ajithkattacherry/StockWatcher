@@ -1,0 +1,17 @@
+name: StockCore tests
+
+on:
+  push:
+    paths: ["StockCore/**", ".github/workflows/stockcore-tests.yml"]
+  pull_request:
+    paths: ["StockCore/**"]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    container: swift:6.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        working-directory: StockCore
+        run: swift test
