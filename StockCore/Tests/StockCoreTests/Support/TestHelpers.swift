@@ -29,3 +29,9 @@ func inputs(financials: [AnnualFinancials] = [], quote: PriceQuote? = nil,
     CompanyInputs(company: company, financials: financials, quote: quote,
                   insiderTransactions: insiders, holdings: holdings, asOf: asOf)
 }
+
+extension PercentileTable {
+    /// percentile(of: v) == v for v in 0...100, for every metric.
+    static let identity = PercentileTable(cutPoints: Dictionary(
+        uniqueKeysWithValues: MetricID.allCases.map { ($0, (0...100).map(Double.init)) }))
+}
